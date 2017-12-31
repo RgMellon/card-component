@@ -1,20 +1,20 @@
 <template>
   <section class="card">
     <div class="card-titulo">
-      <h3> Card Title </h3>
+      <h3> {{ titulo }}</h3>
     </div>
     <div class="card-subtitle">
-      <p> this is a subtitle </p>
+      <p> {{ subtitulo }} </p>
     </div>
     <hr>
     <div class="card-content">
       <div class="wrapper-content">
-        <img src="/src/assets/img/morty.png"> </img>
-        <p> oi </p>
+        <img :src="myImagem"> </img>
+        <p> <slot> </slot> </p>
       </div>
     </div>
     <div class="card-rodape">
-      <p> this is a rodape </p>
+      <p> <slot name="rodape"> </slot> </p>
     </div>
   </section>
 </template>
@@ -22,11 +22,17 @@
 <script>
   export default {
     name: 'myCard',
+    props: ['titulo', 'subtitulo', 'imagem'],
     data(){
        return {
 
       }
     },
+    computed: {
+      myImagem() {
+        return `/src/assets/img/${this.imagem}`;
+      }
+    }
   }
 </script>
 

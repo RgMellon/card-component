@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-  <my-card> </my-card>
+  <my-card titulo="Card" subtitulo="This is sparta"
+    imagem="morty.png">
+    Chesssss RICK
+    <span slot="rodape"> WUbbba lub dub dub </span>
+  </my-card>
   </div>
 </template>
 
